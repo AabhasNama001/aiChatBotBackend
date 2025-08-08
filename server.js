@@ -10,7 +10,8 @@ const httpServer = createServer(app);
 
 const io = new Server(httpServer, {
   cors: {
-    origin: "https://ai-chat-bot-frontend-eight.vercel.app/",
+    origin: "https://ai-chat-bot-frontend-eight.vercel.app", // ✅ no trailing slash
+    methods: ["GET", "POST"],
   },
 });
 
