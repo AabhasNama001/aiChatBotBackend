@@ -4,6 +4,7 @@ const { createServer } = require("http");
 const { Server } = require("socket.io");
 const generateResponse = require("./src/service/ai.service");
 const { text } = require("stream/consumers");
+const PORT = process.env.PORT || 3000;
 
 const httpServer = createServer(app);
 
@@ -40,6 +41,6 @@ io.on("connection", (socket) => {
   });
 });
 
-httpServer.listen(3000, () => {
-  console.log("Server is running on port no. 3000");
+httpServer.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
